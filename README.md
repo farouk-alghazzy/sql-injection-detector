@@ -4,6 +4,8 @@ This project is a simple Flask web application designed to detect and log SQL in
 
 It stores detected attacks in a SQLite database and allows admin users to view and download logs through a protected dashboard.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-blue)](https://sql-injection-detector.onrender.com)
+
 ## Features
 
 - Detects common SQL injection patterns in login inputs
