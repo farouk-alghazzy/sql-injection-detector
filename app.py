@@ -20,7 +20,7 @@ login_manager.login_view = 'login'
 
 class Admin(UserMixin):
     id = 1
-    username = "admin"
+    username = "admin" # <--- Admin Login 
     password = "secure123"
 
 @login_manager.user_loader
@@ -274,8 +274,6 @@ def download_log():
         cw.writerow([a.timestamp, a.ip_address, a.username, a.password])
     output = si.getvalue().encode('utf-8')
     return Response(output, mimetype="text/csv", headers={"Content-Disposition": "attachment;filename=attack_log.csv"})
-
-import os
 
 if __name__ == '__main__':
     with app.app_context():
