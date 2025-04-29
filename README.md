@@ -32,9 +32,7 @@ It stores detected attacks in a SQLite database and allows admin users to view a
 This app is ready for deployment on platforms like Render.  
 The `render.yaml` file is provided for easy configuration.
 
-## License
 
-This project is open-source and free to use.
 
 
 
