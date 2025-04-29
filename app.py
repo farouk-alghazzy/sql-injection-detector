@@ -66,7 +66,39 @@ def main_login():
             )
             db.session.add(new_attack)
             db.session.commit()
-            return redirect('/')
+            return render_template_string('''
+            <html>
+            <head>
+                <link rel="stylesheet" href="/static/style.css">
+                <script>
+                    function toggleDarkMode() {
+                        const body = document.body;
+                        const dark = body.classList.toggle("dark-mode");
+                        localStorage.setItem("darkMode", dark);
+                    }
+                    window.onload = () => {
+                        if (localStorage.getItem("darkMode") === "true") {
+                            document.body.classList.add("dark-mode");
+                        }
+                    };
+                </script>
+            </head>
+            <body>
+                <div style="text-align:right; padding:10px;">
+                    <button onclick="toggleDarkMode()" class="toggle-btn">Toggle Dark Mode</button>
+                </div>
+                <div class="login-box">
+                    <h2>SQL Injection Detected</h2>
+                    <div class="alert-box">
+                        Suspicious activity detected and logged.
+                    </div>
+                    <div style="text-align:center; margin-top:20px;">
+                        <a href="/" class="admin-link">Return to Login</a>
+                    </div>
+                </div>
+            </body>
+            </html>
+            ''')
 
         return render_template_string('''
         <html>
@@ -242,6 +274,8 @@ def download_log():
         cw.writerow([a.timestamp, a.ip_address, a.username, a.password])
     output = si.getvalue().encode('utf-8')
     return Response(output, mimetype="text/csv", headers={"Content-Disposition": "attachment;filename=attack_log.csv"})
+
+import os
 
 if __name__ == '__main__':
     with app.app_context():

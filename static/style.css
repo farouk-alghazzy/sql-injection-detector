@@ -115,3 +115,16 @@ input[type="submit"] {
 .toggle-btn:hover {
     background-color: #555;
 }
+
+.alert-box {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffe6e6;
+    border: 2px solid #ff4d4d;
+    border-radius: 8px;
+    color: #b30000;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
