@@ -1,3 +1,5 @@
+[![Render Deployment](https://img.shields.io/badge/Live%20Demo-Online-blue)](https://sql-injection-detector.onrender.com)
+
 # SQL Injection Detection Web App
 
 This project is a simple Flask web application designed to detect and log SQL injection attempts through a fake login form.
