@@ -128,3 +128,9 @@ input[type="submit"] {
     text-align: center;
     font-size: 18px;
 }
+
+.dark-mode .summary-box {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border: 1px solid #444;
+}
