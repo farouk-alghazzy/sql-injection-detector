@@ -1,40 +1,54 @@
-**Live Demo:** https://sql-injection-detector.onrender.com
-
 # SQL Injection Detection Web App
 
-This project is a simple Flask web application designed to detect and log SQL injection attempts through a fake login form.
+🔗 **Live Demo**: https://sql-injection-detector.onrender.com
 
-It stores detected attacks in a SQLite database and allows admin users to view and download logs through a protected dashboard.
+This is a Flask web app that detects and logs SQL injection (SQLi) attempts through a fake login form. It uses both traditional regex pattern matching and an optional machine learning classifier to identify suspicious inputs.
 
-## Features
+All detected attacks are logged to a SQLite database. An admin dashboard allows reviewing, exporting, and analyzing attack activity.
 
-- Detects common SQL injection patterns in login inputs
-- Logs attacks to a database
-- Admin login system with session management
-- Admin dashboard for viewing and downloading attack logs
-- Dark mode toggle for user interface
+---
 
-## Technologies Used
+## 🔒 Features
 
-- Python
-- Flask
-- Flask-Login
-- Flask-SQLAlchemy
-- HTML/CSS
+- ✅ Detects SQL injection via **regex** and optional **machine learning (Logistic Regression)**
+- ✅ **Honeypot endpoints** to trap bots probing for vulnerable routes
+- ✅ Logs all attacks with timestamp, IP address, and credentials
+- ✅ Admin dashboard with login protection and session management
+- ✅ Downloadable CSV logs for auditing
+- ✅ Toggleable **dark mode** UI
+- ✅ **Analytics dashboard** (Plotly) with interactive charts:
+  - Attack volume over time
+  - Top payloads
+  - Honeypot vs. SQLi attack ratio
 
-## How to Run Locally
+---
 
-1. Clone the repository
-2. Install dependencies: pip install -r requirements.txt
-3. Run the application: python app.py
-4. Visit `http://127.0.0.1:5000/` in your browser
+## 🛠 Technologies Used
 
+- Python, Flask
+- Flask-Login, Flask-SQLAlchemy
+- Plotly (for dashboard analytics)
+- Scikit-learn (for ML-based detection)
+- HTML/CSS (Dark Mode UI)
+- SQLite
 
+---
 
+## 🧠 Admin Login
 
+- **Username**: `admin`
+- **Password**: `secure123`
 
+---
 
+## 📦 Deployment
 
+This project is deployed using [Render](https://render.com). The app can also be Dockerized or hosted on any platform that supports Flask.
 
+---
 
+## 📚 TODO / Future Improvements
 
+- Filter logs by IP or time range
+- Display detection source (ML vs Regex)
+- Support IP blocking or throttling
